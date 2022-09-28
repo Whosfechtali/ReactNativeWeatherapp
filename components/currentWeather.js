@@ -1,29 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, ProgressViewIOSComponent } from 'react-native';
 
-export default function Currentweather() {
+export default function Currentweather(props) {
 
     return(
-        <View style={styles.currentWeather}>
             <View style={styles.container}>
             <Image
               style={styles.icon}
-              source={{uri: 'https://openweathermap.org/img/wn/01d@2x.png'}}
+              source={{uri: `https://openweathermap.org/img/wn/${props.icon}@2x.png`}}
             />
-            <Text style={styles.text}>23°</Text>
-            <Text style={{fontSize: 25, marginBottom: 20,}}>Sunny</Text>
+            <Text style={styles.text}>{props.temperature}</Text>
+            <Text style={{fontSize: 25, marginBottom: 20,}}>{props.description}</Text>
              </View>
-        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    currentWeather:{
-        flex: 1,
-        height: 300,
-        marginBottom: 100,
-    },
     container:{
+        height: 300,
         flexDirection: 'column',
         marginHorizontal: 20,
         alignItems: 'center',

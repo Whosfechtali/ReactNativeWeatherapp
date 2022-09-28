@@ -23,11 +23,8 @@ export default function Refreshdata(props) {
 }
 
 const styles = StyleSheet.create({
-    AvoidingView:{
-        flex: 1,
-    },
     container:{
-        height: 100,
+        height: 200,
         flexDirection: 'column',
         alignItems: 'center',
     },
